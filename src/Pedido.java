@@ -1,5 +1,3 @@
-package Model;
-
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -91,7 +89,7 @@ public class Pedido {
         "=================================\n" +
         "ID Pedido: " + idPedido + "\n" +
         "Fecha: " + fechaPedido + "\n" +
-        "Estado" + estado + "\n" +
+        "Estado: " + estado + "\n" +
         "Nombre del Cliente: " + cliente.getNombre() + "\n" +
         "DNI del Cliente: " + cliente.getDni() + "\n" +
         "Dirección del Cliente: " + cliente.getDireccionEnvio() + "\n" +
@@ -100,11 +98,11 @@ public class Pedido {
         );
 
         for (Producto p : listaProductos) {
-            System.out.println("- " + p.getNombre() + "" + p.calcularPrecioFinal() + "€");
+            System.out.println("- " + p.getNombre() + " " + p.calcularPrecioFinal() + " EUROS");
         }
 
         System.out.println("=================================\n" +
-            "TOTAL IMPORTE: " + calcularTotal() + "€\n" +
+            "TOTAL IMPORTE: " + calcularTotal() + " EUROS\n" +
             "=================================" 
         );
     }

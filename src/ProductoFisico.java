@@ -1,5 +1,3 @@
-package Model;
-
 public class ProductoFisico extends Producto {
     // VARIABLES
     private double costeEnvio;
