@@ -1,5 +1,3 @@
-package Model;
-
 public class Cliente {
     // VARIABLES
     private String dni;

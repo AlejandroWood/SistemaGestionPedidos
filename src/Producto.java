@@ -1,5 +1,3 @@
-package Model;
-
 public abstract class Producto {
     // VARIABLES
     private int idProducto;

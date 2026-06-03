@@ -1,5 +1,3 @@
-package Model;
-
 public class ProductoDigital extends Producto {
     // VARIABLES
     private double tamanoDescargaMb;
