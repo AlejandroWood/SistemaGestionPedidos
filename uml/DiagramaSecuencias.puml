@@ -1,0 +1,31 @@
+@startuml
+autonumber
+
+participant "Main" as Main
+participant "miPedido:Pedido" as Pedido
+participant "p:Producto" as Producto
+
+== Cálculo del Total ==
+Main -> Pedido : calcularTotal()
+activate Pedido
+    loop Para cada producto en la lista
+        Pedido -> Producto : calcularPrecioFinal()
+        activate Producto
+        Producto --> Pedido : precio
+        deactivate Producto
+    end loop
+    Pedido --> Main : total
+deactivate Pedido
+
+== Proceso de Pago ==
+Main -> Pedido : pagarPedido()
+activate Pedido
+    alt Si hay stock (Éxito)
+        Pedido -> Pedido : setEstado("PAGADO")
+        Pedido --> Main : true
+    else Si NO hay stock (Fallo)
+        Pedido -> Pedido : setEstado("CANCELADO")
+        Pedido --> Main : false
+    end alt
+deactivate Pedido
+@endlump

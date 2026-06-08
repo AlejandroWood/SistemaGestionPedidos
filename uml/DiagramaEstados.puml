@@ -1,0 +1,11 @@
+@startuml
+[*] --> PENDIENTE : Al instanciar el Pedido\n(new Pedido())
+
+PENDIENTE --> PAGADO : pagarPedido() [Si hay stock]
+PENDIENTE --> CANCELADO : pagarPedido() [Sin stock]\no cancelar()
+
+PAGADO --> ENTREGADO : enviarPedido()
+
+ENTREGADO --> [*]
+CANCELADO --> [*]
+@endum
